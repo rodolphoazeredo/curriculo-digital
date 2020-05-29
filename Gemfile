@@ -4,8 +4,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.8'
 # Mongoid
 gem 'mongoid'
+# Mongoid paginator
+gem 'kaminari-mongoid'
 # Devise
 gem 'devise'
+# Rails Admin
+gem 'rails_admin'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.3'
 # Use Puma as the app server
