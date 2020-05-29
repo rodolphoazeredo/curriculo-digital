@@ -1,0 +1,19 @@
+version: '3'
+services:
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - '27017:27017'
+  api:
+    container_name: api
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/curriculo-digital
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+    links:
+      - mongo
